@@ -1,0 +1,14 @@
+# Not part of the submission -- see WRITEUP.md Section 2 for why the
+# journal papers are cited by DOI rather than committed as PDFs.
+Research_Papers/
+Research Engineer-monotype.pdf
+Logo_Tampering_Research_Assignment.docx
+
+# Local tool config / OS clutter
+.claude/
+.DS_Store
+
+# Python
+code/.venv/
+**/__pycache__/
+*.pyc
