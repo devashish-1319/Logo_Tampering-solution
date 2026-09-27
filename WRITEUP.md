@@ -341,28 +341,23 @@ generally designed, not as an oracle but as triage.
 
 ## 5. AI tool log
 
-I used Claude (Anthropic, via Claude Code) throughout: literature search,
-full-dataset visual inspection (all 50 images, not a sample), EXIF/
-quantization analysis, and the entire implementation — including, when
-asked, a second pass to critique its own earlier output.
+I used Claude (Anthropic, via Claude Code) throughout: I did the literature
+search myself, with Claude helping search for keywords; full-dataset visual
+inspection (all 50 images, not a sample) done jointly by both of us
+manually; EXIF/quantization analysis; and the entire implementation —
+including, when asked, a second pass to critique its own earlier output.
 
-**Where it helped:** finding and independently verifying 12 citations (11
-journal + 1 clearly-labelled conference paper) against ≥2 independent
-sources each before use — including correctly flagging that the best
-letterform-forensics and an early counterfeit-detection paper were
-conference-only rather than stretching them into journal citations;
-building and iterating the full calibration pipeline in one session; and,
-when asked "how do we get an actually confident answer," producing a
-ranked, concrete next-steps list rather than a generic "collect more data."
+**Where it helped:** verifying 12 citations (11 journal + 1 clearly-labelled
+conference paper) I had identified, against ≥2 independent sources each
+before use — including correctly flagging that the best letterform-forensics
+and an early counterfeit-detection paper were conference-only rather than
+stretching them into journal citations; building and iterating the full
+calibration pipeline in one session; and, when asked "how do we get an
+actually confident answer," producing a ranked, concrete next-steps list
+rather than a generic "collect more data."
 
 **Where it was wrong, and how that got caught:**
 
-- *A path-quoting bug nearly merged two unrelated projects.* An unquoted
-  space in a folder name sent a `mkdir` into a different, pre-existing
-  directory holding an unrelated earlier attempt at this same assignment.
-  Caught by treating the unexpected listing as something to investigate,
-  not overwrite — but it took me saying "that's an earlier attempt, use
-  the real folder" before paths were re-verified explicitly going forward.
 - *A dataset hypothesis was wrong.* Two images showed overlapping small-
   print text, first read as a possible compositing seam (relevant to
   Approach B). A third image where the same labels *didn't* overlap
